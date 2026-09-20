@@ -1,4 +1,4 @@
-# recursivehash
+# recursive-hash
 
 Writes a SHA-256 digest for every `.arw` file below a directory into `hashes.txt`.
 
@@ -26,12 +26,12 @@ JDK 17 or newer. The Gradle wrapper downloads Gradle itself.
 ./gradlew build
 ```
 
-This compiles, runs the tests and writes the runnable jar with all dependencies to `build/libs/recursivehash-1.0-SNAPSHOT-all.jar`. Run `./gradlew shadowJar` if you only want the jar.
+This compiles, runs the tests and writes the runnable jar with all dependencies to `build/libs/recursive-hash-1.0-SNAPSHOT-all.jar`. Run `./gradlew shadowJar` if you only want the jar.
 
 ## Usage
 
 ```
-java -jar build/libs/recursivehash-1.0-SNAPSHOT-all.jar <directory>
+java -jar build/libs/recursive-hash-1.0-SNAPSHOT-all.jar <directory>
 ```
 
 `hashes.txt` is overwritten on every run.
@@ -41,7 +41,7 @@ java -jar build/libs/recursivehash-1.0-SNAPSHOT-all.jar <directory>
 `examples/photos` holds three small text files with `.arw` names and one `readme.txt` the tool must ignore.
 
 ```
-java -jar build/libs/recursivehash-1.0-SNAPSHOT-all.jar examples/photos
+java -jar build/libs/recursive-hash-1.0-SNAPSHOT-all.jar examples/photos
 cat hashes.txt
 ```
 
