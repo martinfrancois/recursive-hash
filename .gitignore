@@ -1,4 +1,18 @@
-# Project exclude paths
-/.gradle/
-/build/
-/build/classes/java/main/
+# Gradle
+.gradle/
+build/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tool output (written to the working directory)
+hashes.txt
