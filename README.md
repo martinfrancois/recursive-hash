@@ -4,7 +4,7 @@ Writes a SHA-256 digest for every `.arw` file below a directory into `hashes.txt
 
 ## What it does
 
-The tool walks the directory you pass it, picks every regular file whose name ends in `.arw` in any letter case, and hashes each one with SHA-256. It hashes files in parallel and writes one line per file to `hashes.txt` in the directory you ran it from. The output order follows the directory walk, so it is stable for the same tree on the same machine but not sorted.
+The tool walks the directory you pass it, picks every entry that is not a directory and whose name ends in `.arw` in any letter case, and hashes each one with SHA-256. It hashes files in parallel and writes one line per file to `hashes.txt` in the directory you ran it from. The output order follows the directory walk, so it is stable for the same tree on the same machine but not sorted.
 
 Each line has three tab-separated columns and no trailing newline after the last line:
 
