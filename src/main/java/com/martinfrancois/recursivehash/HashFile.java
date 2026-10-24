@@ -8,12 +8,14 @@ import java.nio.file.Path;
 
 public class HashFile {
 
+    static final String ERROR_MARKER = "Error!";
+
     public static String getHash(Path path) {
         try {
             return Files.asByteSource(path.toFile()).hash(Hashing.sha256()).toString();
         } catch (IOException e) {
             e.printStackTrace();
-            return "Error!";
+            return ERROR_MARKER;
         }
     }
 

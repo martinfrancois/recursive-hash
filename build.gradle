@@ -24,7 +24,7 @@ tasks.withType(JavaCompile).configureEach {
 
 test {
     useJUnitPlatform()
-    // App writes hashes.txt into the working directory. Keep that out of the project root.
+    // Keeps the hashes.txt that App writes to its working directory out of the project root.
     File testWorkDir = layout.buildDirectory.dir('test-work').get().asFile
     workingDir = testWorkDir
     doFirst { testWorkDir.mkdirs() }
