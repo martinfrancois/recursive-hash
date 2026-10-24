@@ -1,8 +1,6 @@
 package com.martinfrancois.recursivehash;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -33,8 +31,7 @@ class AppTest {
 
         App.main(new String[] {dir.toString()});
 
-        // App writes into the working directory, which build.gradle sets to build/test-work.
-        Path output = Path.of("hashes.txt");
+        Path output = Path.of(App.OUTPUT_FILE);
         List<String> lines = Arrays.asList(Files.readString(output, StandardCharsets.UTF_8).split("\n"));
         Files.delete(output);
 
@@ -43,7 +40,6 @@ class AppTest {
                 bravo.getParent() + "\tbravo.ARW\t" + SHA256_BRAVO);
         assertEquals(expected.stream().sorted().collect(Collectors.toList()),
                 lines.stream().sorted().collect(Collectors.toList()));
-        assertFalse(lines.stream().anyMatch(line -> line.contains("notes.txt")), "non-.arw files must be skipped");
     }
 
     @Test
@@ -58,6 +54,6 @@ class AppTest {
     void getHashReportsUnreadableFileAsErrorMarker(@TempDir Path dir) {
         String result = HashFile.getHash(dir.resolve("missing.arw"));
 
-        assertTrue(result.equals("Error!"), "unexpected marker: " + result);
+        assertEquals(HashFile.ERROR_MARKER, result);
     }
 }

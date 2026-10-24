@@ -61,7 +61,7 @@ examples/photos	DSC00001.arw	b6a98d9ce9a2d9149288fa3df42d377c3e42737afdcdaf714e3
 
 ## Limitations
 
-- Only `.arw` files. Change the `extension` constant in `App.java` for other file types.
+- Only `.arw` files. Change the `EXTENSION` constant in `App.java` for other file types.
 - Output always goes to `hashes.txt` in the current directory.
 - Symbolic links to directories are not followed. A link to a file is hashed through the link.
 - The whole result is held in memory before it is written, so a tree with millions of files needs a matching heap.
