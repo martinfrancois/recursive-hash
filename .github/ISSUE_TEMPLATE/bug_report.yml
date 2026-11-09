@@ -1,0 +1,32 @@
+name: Bug report
+description: Report something that doesn't work as documented.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Leave out private paths and personal data, also from output and screenshots.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The command you ran and the folder layout it ran on, ideally with the synthetic files in examples/photos.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Commit, operating system and Java version (java -version).
+  - type: textarea
+    id: logs
+    attributes:
+      label: Output or hashes.txt lines
+      description: The console output, or the lines in hashes.txt that look wrong.
+      render: text
